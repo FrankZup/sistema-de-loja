@@ -14,7 +14,12 @@ public class Estoque {
         produtosEstoque.remove(produto);
     }
 
-    public static int verificarSaldoAtualProduto(Produto produto){
+    public static int verificarSaldoAtualProdutoEstoque(Produto produto){
         return produtosEstoque.get(produto).intValue();
+    }
+
+    public static void exibirSaldoPorProdutoEstoque(Produto produto){
+        System.out.printf("Produto "+produto.getNome()+ " tem "+
+                           verificarSaldoAtualProdutoEstoque(produto) + " quantidades em estoque");
     }
 }
