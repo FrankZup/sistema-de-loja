@@ -8,6 +8,8 @@ public class Produto {
     private double precoCusto;
     private Categoria categoria;
 
+    public Produto() {}
+
     public Produto(int id, String nome, double precoCusto, Categoria categoria) {
         this.id = id;
         this.nome = nome;
@@ -26,6 +28,18 @@ public class Produto {
 
     public Categoria getCategoria() { return categoria; }
     public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+
+    public static Produto adicionar(){
+
+        Produto produto01 = new Produto();
+
+        produto01.setId(1);
+        produto01.setNome("Fogão");
+        produto01.setPrecoCusto(299.00);
+        produto01.setCategoria(Categoria.ELETRODOMESTICO);
+
+        return produto01;
+    }
 
     @Override
     public String toString() {
