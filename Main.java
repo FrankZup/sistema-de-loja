@@ -6,6 +6,9 @@ public class Main {
         Cliente cliente = new Cliente();
         cliente.adicionarCliente(cliente);
 
+        System.out.println(cliente);
+
+
        Produto produto01 = Produto.adicionar();
 
         Estoque.adicionarProdutoEstoque(produto01);

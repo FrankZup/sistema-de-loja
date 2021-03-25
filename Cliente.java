@@ -30,6 +30,10 @@ public class Cliente extends Pessoa {
         cliente.setEmail("frank@zup");
         cliente.setCpf("061-779-129.58");
 
+        cliente.getListaDeEnderecos().add(
+                new Endereco("Rua", "122", "Barra", "Jgua", "SC"));
+
+        cliente.getListaDeTelefones().add(new Telefone("333-3562"));
     }
 
     @Override
