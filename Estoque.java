@@ -36,6 +36,13 @@ public class Estoque {
 
     public static void aumentarQuantidadeProdutoEmEstoque(Produto produto, int quantidade){
         int novaQuantidade = verificarSaldoAtualProdutoEstoque(produto) + quantidade;
+        produtosEstoque.put(produto, novaQuantidade);
+    }
 
+    public static void diminuirQuantidadeProdutoEmEstoque(Produto produto, int quantidade){
+        if (saldoDisponivelEmEstoque(produto, quantidade)){
+            int novaQuantidade = verificarSaldoAtualProdutoEstoque(produto) - quantidade;
+            produtosEstoque.put(produto, novaQuantidade);
+        }
     }
 }
