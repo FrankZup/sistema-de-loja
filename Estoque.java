@@ -24,6 +24,10 @@ public class Estoque {
                            verificarSaldoAtualProdutoEstoque(produto) + " quantidades em estoque");
     }
 
+    public static boolean saldoDisponivelEmEstoque(Produto produto, int quantidade){
+        return verificarSaldoAtualProdutoEstoque(produto) >= quantidade;
+    }
+
     public static void exibirSaldoPorProduto(){
         for (Map.Entry<Produto, Integer> estoquePorProduto : produtosEstoque.entrySet()){
             exibirSaldoPorProdutoEstoque(estoquePorProduto.getKey());
