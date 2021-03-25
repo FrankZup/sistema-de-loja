@@ -24,6 +24,14 @@ public class Cliente extends Pessoa {
         this.listaDeTelefones = listaDeTelefones;
     }
 
+    public void adicionarCliente(Cliente cliente){
+
+        cliente.setNome("Franklin");
+        cliente.setEmail("frank@zup");
+        cliente.setCpf("061-779-129.58");
+
+    }
+
     @Override
     public String toString() {
         return "Cliente{" +

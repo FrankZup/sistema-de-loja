@@ -3,6 +3,9 @@ package mentoria.projeto;
 public class Main {
     public static void main(String[] args) {
 
+        Cliente cliente = new Cliente();
+        cliente.adicionarCliente(cliente);
+
        Produto produto01 = Produto.adicionar();
 
         Estoque.adicionarProdutoEstoque(produto01);
