@@ -8,21 +8,22 @@ public class Main {
 
         System.out.println(cliente);
 
+        Produto produto = new Produto();
+        produto.adicionarProduto(produto);
 
-       Produto produto01 = Produto.adicionar();
+        System.out.println(produto);
 
-        Estoque.adicionarProdutoEstoque(produto01);
-        //Estoque.adicionarProdutoEstoque(produto02);
+        Estoque.adicionarProdutoEstoque(produto);
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto01);
+        Estoque.exibirSaldoPorProdutoEstoque(produto);
 
-        Estoque.aumentarQuantidadeProdutoEmEstoque(produto01, 200);
+        Estoque.aumentarQuantidadeProdutoEmEstoque(produto, 200);
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto01);
+        Estoque.exibirSaldoPorProdutoEstoque(produto);
 
-        Estoque.diminuirQuantidadeProdutoEmEstoque(produto01, 50);
+        Estoque.diminuirQuantidadeProdutoEmEstoque(produto, 50);
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto01);
+        Estoque.exibirSaldoPorProdutoEstoque(produto);
 
     }
 }

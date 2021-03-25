@@ -29,16 +29,14 @@ public class Produto {
     public Categoria getCategoria() { return categoria; }
     public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 
-    public static Produto adicionar(){
+    public void adicionarProduto(Produto produto){
 
-        Produto produto01 = new Produto();
+        produto.setId(1);
+        produto.setNome("Fogão");
+        produto.setPrecoCusto(299.00);
+        produto.setCategoria(Categoria.ELETRODOMESTICO);
 
-        produto01.setId(1);
-        produto01.setNome("Fogão");
-        produto01.setPrecoCusto(299.00);
-        produto01.setCategoria(Categoria.ELETRODOMESTICO);
 
-        return produto01;
     }
 
     @Override
