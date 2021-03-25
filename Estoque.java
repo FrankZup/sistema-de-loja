@@ -7,11 +7,11 @@ public class Estoque {
 
     private static HashMap<Produto, Integer> produtosEstoque = new HashMap<>();
 
-    public void adicionarProdutoEstoque(Produto produto) {
+    public static void adicionarProdutoEstoque(Produto produto) {
         produtosEstoque.put(produto, 0);
     }
 
-    public void removerProdutoEstoque(Produto produto){
+    public static void removerProdutoEstoque(Produto produto){
         produtosEstoque.remove(produto);
     }
 
@@ -21,7 +21,7 @@ public class Estoque {
 
     public static void exibirSaldoPorProdutoEstoque(Produto produto){
         System.out.printf("Produto "+produto.getNome()+ " tem "+
-                           verificarSaldoAtualProdutoEstoque(produto) + " quantidades em estoque");
+                           verificarSaldoAtualProdutoEstoque(produto) + " quantidades em estoque\n");
     }
 
     public static boolean saldoDisponivelEmEstoque(Produto produto, int quantidade){
