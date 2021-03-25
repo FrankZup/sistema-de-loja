@@ -29,4 +29,9 @@ public class Estoque {
             exibirSaldoPorProdutoEstoque(estoquePorProduto.getKey());
         }
     }
+
+    public static void aumentarQuantidadeProdutoEmEstoque(Produto produto, int quantidade){
+        int novaQuantidade = verificarSaldoAtualProdutoEstoque(produto) + quantidade;
+
+    }
 }
