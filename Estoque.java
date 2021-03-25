@@ -1,6 +1,7 @@
 package mentoria.projeto;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Estoque {
 
@@ -21,5 +22,11 @@ public class Estoque {
     public static void exibirSaldoPorProdutoEstoque(Produto produto){
         System.out.printf("Produto "+produto.getNome()+ " tem "+
                            verificarSaldoAtualProdutoEstoque(produto) + " quantidades em estoque");
+    }
+
+    public static void exibirSaldoPorProduto(){
+        for (Map.Entry<Produto, Integer> estoquePorProduto : produtosEstoque.entrySet()){
+            exibirSaldoPorProdutoEstoque(estoquePorProduto.getKey());
+        }
     }
 }
