@@ -1,5 +1,11 @@
-package mentoria.projeto;
+package mentoria.projeto.fiscal;
 
+import mentoria.projeto.cliente.Cliente;
+import mentoria.projeto.empresa.Empresa;
+import mentoria.projeto.produto.Produto;
+import mentoria.projeto.venda.ItemPedido;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotaFiscal {
@@ -7,7 +13,13 @@ public class NotaFiscal {
     private Empresa empresa;
     private Cliente cliente;
     private double valorNota;
-    private List <NotaFiscalItem> itensNotaFiscal;
+    private List <NotaFiscalItem> itensNotaFiscal = new ArrayList<>();
+
+    public NotaFiscal(int numeroNota, Empresa empresa, Cliente cliente) {
+        this.numeroNota = numeroNota;
+        this.empresa = empresa;
+        this.cliente = cliente;
+    }
 
     public NotaFiscal() { }
 
@@ -27,6 +39,17 @@ public class NotaFiscal {
     public void setItensNotaFiscal(List<NotaFiscalItem> itensNotaFiscal) {
         this.itensNotaFiscal = itensNotaFiscal;
     }
+
+    public static double calcularValorTotalNota( List<NotaFiscalItem> notaFiscalItem) {
+        double totalDaNota = 0.00;
+
+        for (NotaFiscalItem item : notaFiscalItem) {
+            totalDaNota += item.getValorUnitario() * item.getQuantidade();
+        }
+
+        return totalDaNota;
+    }
+
 
     @Override
     public String toString() {

@@ -9,7 +9,10 @@ public class Main {
         System.out.println(cliente);
 
         Produto produto = new Produto();
+        //Produto produto02 = new Produto();
+
         produto.adicionarProduto(produto);
+        //produto02.adicionarProduto(produto02);
 
         System.out.println(produto);
 
