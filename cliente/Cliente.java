@@ -1,4 +1,7 @@
-package mentoria.projeto;
+package mentoria.projeto.cliente;
+
+import mentoria.projeto.contato.Endereco;
+import mentoria.projeto.contato.Telefone;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +12,10 @@ public class Cliente extends Pessoa {
     private List<Telefone> listaDeTelefones = new ArrayList<>();
 
     public Cliente(){}
+
+    public Cliente(String email) {
+        this.email = email;
+    }
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
@@ -24,7 +31,8 @@ public class Cliente extends Pessoa {
         this.listaDeTelefones = listaDeTelefones;
     }
 
-    public void adicionarCliente(Cliente cliente){
+    public static Cliente criarClientePopulado(){
+        Cliente cliente = new Cliente();
 
         cliente.setNome("Franklin");
         cliente.setEmail("frank@zup");
@@ -34,6 +42,8 @@ public class Cliente extends Pessoa {
                 new Endereco("Rua", "122", "Barra", "Jgua", "SC"));
 
         cliente.getListaDeTelefones().add(new Telefone("333-3562"));
+
+        return cliente;
     }
 
     @Override

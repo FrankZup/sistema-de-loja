@@ -1,24 +1,20 @@
-package mentoria.projeto;
+package mentoria.projeto.empresa;
+
+import mentoria.projeto.contato.Endereco;
+import mentoria.projeto.contato.Telefone;
 
 public class Empresa {
-    private String cnpj;
-    private String nomeEmpresa;
-    private Telefone telefone;
-    private Endereco endereco;
+    private final String cnpj = "12345";
+    private final String nomeEmpresa = "Loja do Frankllin";
+    private final Telefone telefone = Telefone.criarTelefoneDaEmpresa();
+    private final Endereco endereco = Endereco.criarEnderecoDaEmpresa();
 
     public Empresa() {}
 
     public String getCnpj() { return cnpj; }
-    public void setCnpj(String cnpj) { this.cnpj = cnpj; }
-
     public String getNomeEmpresa() { return nomeEmpresa; }
-    public void setNomeEmpresa(String nomeEmpresa) { this.nomeEmpresa = nomeEmpresa; }
-
     public Telefone getTelefone() { return telefone; }
-    public void setTelefone(Telefone telefone) { this.telefone = telefone; }
-
     public Endereco getEndereco() { return endereco; }
-    public void setEndereco(Endereco endereco) { this.endereco = endereco; }
 
     @Override
     public String toString() {

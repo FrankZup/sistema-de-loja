@@ -1,4 +1,8 @@
-package mentoria.projeto;
+package mentoria.projeto.contato;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Endereco {
     private String rua;
@@ -39,5 +43,21 @@ public class Endereco {
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
                 '}';
+    }
+
+    public static List<Endereco> criarListaDeEnderecoPopulado(){
+        List<Endereco> enderecos = new ArrayList<>();
+
+        Endereco endereco01 = new Endereco("Rua Ensino", "677", "Barra", "Jaraguá do Sul", "SC");
+        Endereco endereco02 = new Endereco("Rua Vestibular", "677", "Barra", "Joinville", "SC");
+
+        enderecos.addAll(Arrays.asList(endereco01, endereco02));
+
+        return enderecos;
+    }
+
+    public static Endereco criarEnderecoDaEmpresa(){
+        Endereco endereco = new Endereco("R. Virgílio Pedro Rubini", "677", "Barra do Rio Cerro", "Jaraguá do Sul", "SC");
+        return endereco;
     }
 }
