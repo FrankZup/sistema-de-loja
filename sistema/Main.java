@@ -1,32 +1,48 @@
-package mentoria.projeto;
+package mentoria.projeto.sistema;
+
+import mentoria.projeto.cliente.Cliente;
+import mentoria.projeto.contato.Endereco;
+import mentoria.projeto.contato.Telefone;
+import mentoria.projeto.empresa.Empresa;
+import mentoria.projeto.fiscal.Fiscal;
+import mentoria.projeto.produto.Estoque;
+import mentoria.projeto.produto.Produto;
+import mentoria.projeto.venda.ItemPedido;
+import mentoria.projeto.venda.Pedido;
+
+import java.util.Arrays;
+
 
 public class Main {
     public static void main(String[] args) {
 
-        Cliente cliente = new Cliente();
-        cliente.adicionarCliente(cliente);
+        Endereco enderecoEmpresa = Endereco.criarListaDeEnderecoPopulado().get(0);
+        Telefone telefoneEmpresa = Telefone.criarTelefonePopulado().get(0);
 
-        System.out.println(cliente);
+        Cliente cliente = Cliente.criarClientePopulado();
 
-        Produto produto = new Produto();
-        //Produto produto02 = new Produto();
+        Produto produto01 = Produto.criarProdutoPopulado();
+        Produto produto02 = Produto.criarProdutoPopulado02();
 
-        produto.adicionarProduto(produto);
-        //produto02.adicionarProduto(produto02);
+        Pedido pedido = Pedido.criarPedidoPopulado(cliente);
 
-        System.out.println(produto);
+        ItemPedido itemPedido01 = new ItemPedido(produto01, 5);
+        ItemPedido itemPedido02 = new ItemPedido(produto02, 10);
 
-        Estoque.adicionarProdutoEstoque(produto);
+        pedido.getItemPedido().addAll(Arrays.asList(itemPedido01, itemPedido02));
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto);
+        Fiscal fiscal = new Fiscal();
 
-        Estoque.aumentarQuantidadeProdutoEmEstoque(produto, 200);
+        Estoque.adicionarProdutoEstoque(produto01);
+        Estoque.aumentarQuantidadeProdutoEmEstoque(produto01, 10);
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto);
+        Estoque.adicionarProdutoEstoque(produto02);
+        Estoque.aumentarQuantidadeProdutoEmEstoque(produto02, 10);
 
-        Estoque.diminuirQuantidadeProdutoEmEstoque(produto, 50);
+        for (ItemPedido itensPedido : pedido.getItemPedido()) {
+            Estoque.diminuirQuantidadeProdutoEmEstoque(itensPedido.getProduto(), itensPedido.getQuantidade());
+        }
 
-        Estoque.exibirSaldoPorProdutoEstoque(produto);
-
+        System.out.println(fiscal.emitirNotaFiscal(pedido));
     }
 }
