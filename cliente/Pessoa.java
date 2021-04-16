@@ -1,4 +1,4 @@
-package mentoria.projeto;
+package mentoria.projeto.cliente;
 
 public class Pessoa {
     private String nome;

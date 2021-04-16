@@ -1,4 +1,6 @@
-package mentoria.projeto;
+package mentoria.projeto.venda;
+
+import mentoria.projeto.produto.Produto;
 
 public class ItemPedido {
     private Produto produto;
@@ -28,5 +30,15 @@ public class ItemPedido {
                 ", quantidade=" + quantidade +
                 ", valorProduto=" + valorProduto +
                 '}';
+    }
+
+    public static ItemPedido criarItemPedidoPopulado(Produto produto){
+        ItemPedido itemPedido = new ItemPedido();
+
+        itemPedido.setProduto(produto);
+        itemPedido.setQuantidade(10);
+
+        return itemPedido;
+
     }
 }
