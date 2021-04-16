@@ -1,4 +1,6 @@
-package mentoria.projeto;
+package mentoria.projeto.venda;
+
+import mentoria.projeto.fiscal.Fiscal;
 
 public class Venda {
     private int id;

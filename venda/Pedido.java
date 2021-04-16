@@ -1,5 +1,6 @@
-package mentoria.projeto;
+package mentoria.projeto.venda;
 
+import mentoria.projeto.cliente.Cliente;
 import mentoria.projeto.enums.Status;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class Pedido {
         this.cliente = cliente;
         this.observacao = observacao;
         this.status = status;
-        this.itemPedido = itemPedido;
     }
 
     public int getId() { return id; }
@@ -46,5 +46,16 @@ public class Pedido {
                 ", status=" + status +
                 ", itemPedido=" + itemPedido +
                 '}';
+    }
+
+    public static Pedido criarPedidoPopulado(Cliente cliente){
+        Pedido pedido = new Pedido();
+
+        pedido.setId(1);
+        pedido.setCliente(cliente);
+        pedido.setObservacao("");
+        pedido.setStatus(Status.NOVO);
+
+        return pedido;
     }
 }
