@@ -1,6 +1,7 @@
-package mentoria.projeto;
+package mentoria.projeto.produto;
 
 import mentoria.projeto.enums.Categoria;
+import mentoria.projeto.venda.ItemPedido;
 
 public class Produto {
     private int id;
@@ -29,14 +30,26 @@ public class Produto {
     public Categoria getCategoria() { return categoria; }
     public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 
-    public void adicionarProduto(Produto produto){
+    public static Produto criarProdutoPopulado(){
+        Produto produto = new Produto();
 
         produto.setId(1);
         produto.setNome("Fogão");
         produto.setPrecoCusto(299.00);
         produto.setCategoria(Categoria.ELETRODOMESTICO);
 
+        return produto;
+    }
 
+    public static Produto criarProdutoPopulado02(){
+        Produto produto = new Produto();
+
+        produto.setId(2);
+        produto.setNome("Computador");
+        produto.setPrecoCusto(1500.00);
+        produto.setCategoria(Categoria.INFORMATICA);
+
+        return produto;
     }
 
     @Override
